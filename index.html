@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tsukino Software Solutions</title>
-<meta name="description" content="Tsukino Software Solutions is a one-person Ohio software shop: custom .NET and Azure development, and an independent job search product. Direct, accountable engineering from first conversation to production deploy.">
+<meta name="description" content="Tsukino Software Solutions is an Ohio software studio: custom .NET and Azure development for clients, and a growing line of independent products. Direct, accountable engineering from first conversation to production deploy.">
 <meta property="og:title" content="Tsukino Software Solutions">
-<meta property="og:description" content="Custom .NET and Azure development from a one-person Ohio shop, plus an independent job search product in the works.">
+<meta property="og:description" content="Custom .NET and Azure development from an Ohio software studio, plus a growing line of independent products.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tsukinosoftware.com/">
 <meta name="theme-color" content="#0F1420">
@@ -14,466 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0F1420;
-    --panel: #161D2E;
-    --panel-2: #1D2740;
-    --moonlight: #E8DFC8;
-    --steel: #6B7A9C;
-    --steel-dim: #4A5673;
-    --signal: #7DD3E0;
-    --text: #F2F0EA;
-    --text-dim: #A6AFC4;
-    --radius: 14px;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--ink);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-  }
-
-  h1, h2, h3 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  .mono {
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  a { color: inherit; text-decoration: none; }
-
-  .wrap {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
-
-  /* ---------- NAV ---------- */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(15, 20, 32, 0.85);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(107, 122, 156, 0.15);
-  }
-
-  nav .wrap {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 68px;
-  }
-
-  .brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 600;
-    font-size: 17px;
-    letter-spacing: -0.01em;
-  }
-
-  .brand-mark {
-    width: 20px; height: 20px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--moonlight) 40%, transparent 41%);
-    box-shadow: inset -4px -2px 0 0 var(--ink);
-    flex-shrink: 0;
-  }
-
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 32px;
-  }
-
-  nav ul li a {
-    font-size: 14px;
-    color: var(--text-dim);
-    transition: color 0.2s ease;
-  }
-
-  nav ul li a:hover { color: var(--signal); }
-
-  .nav-toggle { display: none; }
-
-  /* ---------- HERO ---------- */
-  header.hero {
-    position: relative;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding-top: 68px;
-    overflow: hidden;
-  }
-
-  #moon-canvas {
-    position: absolute;
-    top: 0; right: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    opacity: 0.9;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 1;
-    max-width: 620px;
-  }
-
-  .eyebrow {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12.5px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--signal);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 22px;
-  }
-
-  .eyebrow::before {
-    content: '';
-    width: 24px; height: 1px;
-    background: var(--signal);
-  }
-
-  .hero h1 {
-    font-size: clamp(2.4rem, 5.5vw, 4rem);
-    line-height: 1.08;
-    margin-bottom: 22px;
-  }
-
-  .hero h1 em {
-    font-style: normal;
-    color: var(--moonlight);
-  }
-
-  .hero p.lede {
-    font-size: 17px;
-    color: var(--text-dim);
-    max-width: 480px;
-    margin-bottom: 34px;
-  }
-
-  .cta-row {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 13px 24px;
-    border-radius: 999px;
-    font-size: 14.5px;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
-  }
-
-  .btn-primary {
-    background: var(--moonlight);
-    color: var(--ink);
-  }
-
-  .btn-primary:hover {
-    background: #fff;
-    transform: translateY(-1px);
-  }
-
-  .btn-ghost {
-    border-color: var(--steel-dim);
-    color: var(--text);
-  }
-
-  .btn-ghost:hover {
-    border-color: var(--signal);
-    color: var(--signal);
-  }
-
-  /* ---------- SECTION SCAFFOLD ---------- */
-  section {
-    padding: 120px 0;
-    position: relative;
-    border-top: 1px solid rgba(107, 122, 156, 0.12);
-  }
-
-  .phase-marker {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
-
-  .phase-icon {
-    width: 30px; height: 30px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    background: var(--panel-2);
-    position: relative;
-    overflow: hidden;
-    border: 1px solid var(--steel-dim);
-  }
-
-  .phase-icon::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    background: var(--moonlight);
-  }
-
-  /* new moon -> full moon progression across sections */
-  .phase-new::after { display: none; }
-  .phase-crescent::after { left: 60%; right: -20%; border-radius: 50%; }
-  .phase-half::after { left: 50%; right: 0; }
-  .phase-gibbous::after { left: 20%; right: 0; }
-  .phase-full::after { left: 0; right: 0; }
-
-  .phase-label {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--steel);
-  }
-
-  h2.section-title {
-    font-size: clamp(1.7rem, 3.5vw, 2.4rem);
-    margin-bottom: 18px;
-    max-width: 640px;
-  }
-
-  .section-intro {
-    color: var(--text-dim);
-    max-width: 560px;
-    font-size: 16px;
-    margin-bottom: 56px;
-  }
-
-  /* ---------- ABOUT ---------- */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 60px;
-    align-items: start;
-  }
-
-  .about-grid p {
-    color: var(--text-dim);
-    margin-bottom: 16px;
-    font-size: 15.5px;
-  }
-
-  .stat-card {
-    background: var(--panel);
-    border: 1px solid rgba(107, 122, 156, 0.15);
-    border-radius: var(--radius);
-    padding: 28px;
-  }
-
-  .stat-card dl {
-    display: grid;
-    gap: 18px;
-  }
-
-  .stat-card dt {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--steel);
-    margin-bottom: 4px;
-  }
-
-  .stat-card dd {
-    font-size: 15px;
-    color: var(--text);
-  }
-
-  /* ---------- SERVICES ---------- */
-  .service-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-  }
-
-  .service-card {
-    background: var(--panel);
-    border: 1px solid rgba(107, 122, 156, 0.15);
-    border-radius: var(--radius);
-    padding: 32px;
-    transition: border-color 0.25s ease, transform 0.25s ease;
-  }
-
-  .service-card:hover {
-    border-color: var(--signal);
-    transform: translateY(-3px);
-  }
-
-  .service-num {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--signal);
-    margin-bottom: 20px;
-    display: block;
-  }
-
-  .service-card h3 {
-    font-size: 20px;
-    margin-bottom: 12px;
-  }
-
-  .service-card p {
-    color: var(--text-dim);
-    font-size: 14.5px;
-    margin-bottom: 18px;
-  }
-
-  .tag-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .tag {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11.5px;
-    padding: 5px 11px;
-    border-radius: 999px;
-    border: 1px solid var(--steel-dim);
-    color: var(--text-dim);
-  }
-
-  /* ---------- FOUNDER ---------- */
-  .founder-wrap {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 48px;
-    align-items: start;
-  }
-
-  .founder-orb {
-    width: 160px; height: 160px;
-    border-radius: 50%;
-    background: radial-gradient(circle at 32% 30%, #2A3552, var(--panel) 70%);
-    border: 1px solid rgba(107, 122, 156, 0.25);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .founder-orb::after {
-    content: '';
-    position: absolute;
-    top: -20%; left: 55%;
-    width: 90%; height: 140%;
-    background: var(--ink);
-    border-radius: 50%;
-  }
-
-  .founder-copy p {
-    color: var(--text-dim);
-    font-size: 15.5px;
-    margin-bottom: 16px;
-    max-width: 560px;
-  }
-
-  .founder-copy h3 {
-    font-size: 22px;
-    margin-bottom: 4px;
-  }
-
-  .founder-role {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 13px;
-    color: var(--signal);
-    margin-bottom: 22px;
-  }
-
-  .skill-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 20px;
-  }
-
-  .skill-pill {
-    font-size: 13px;
-    padding: 7px 14px;
-    background: var(--panel-2);
-    border-radius: 999px;
-    color: var(--text);
-  }
-
-  /* ---------- CONTACT ---------- */
-  .contact-box {
-    background: linear-gradient(145deg, var(--panel), var(--panel-2));
-    border: 1px solid rgba(107, 122, 156, 0.2);
-    border-radius: 20px;
-    padding: 56px;
-    text-align: center;
-  }
-
-  .contact-box h2 {
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
-    margin-bottom: 16px;
-  }
-
-  .contact-box p {
-    color: var(--text-dim);
-    max-width: 460px;
-    margin: 0 auto 30px;
-    font-size: 15.5px;
-  }
-
-  footer {
-    padding: 40px 0;
-    text-align: center;
-  }
-
-  footer p {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    color: var(--steel);
-    letter-spacing: 0.04em;
-  }
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width: 780px) {
-    nav ul { display: none; }
-    .about-grid, .founder-wrap, .service-grid {
-      grid-template-columns: 1fr;
-    }
-    .founder-orb { width: 110px; height: 110px; }
-    section { padding: 80px 0; }
-    .contact-box { padding: 36px 24px; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    * { animation: none !important; transition: none !important; }
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--signal);
-    outline-offset: 3px;
-  }
-</style>
+<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -483,7 +24,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#founder">Founder</a></li>
+      <li><a href="#products">Products</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -495,9 +36,9 @@
     <div class="hero-content">
       <div class="eyebrow">Ohio, LLC est. 2026</div>
       <h1>Software built with <em>steady hands</em>, shipped on a clear night.</h1>
-      <p class="lede">Tsukino Software Solutions is a one-person shop doing custom .NET and Azure development, alongside an independent product: a job search app built to cut through the noise of modern hiring.</p>
+      <p class="lede">Tsukino Software Solutions is an Ohio software studio doing custom .NET and Azure development, alongside a growing line of independent products.</p>
       <div class="cta-row">
-        <a href="#services" class="btn btn-primary">See what I build →</a>
+        <a href="#services" class="btn btn-primary">See the work →</a>
         <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
     </div>
@@ -513,9 +54,9 @@
     <h2 class="section-title">A small company, built to move like one.</h2>
     <div class="about-grid">
       <div>
-        <p>Tsukino Software Solutions is an Ohio-based LLC founded in 2026. No layers, no handoffs: direct, accountable engineering from first conversation to production deploy.</p>
+        <p>Tsukino Software Solutions is an Ohio software studio founded in 2026: direct, accountable engineering from first conversation to production deploy.</p>
         <p>The name comes from the Japanese for "of the moon." It's a nod to working with patience and precision, the way the moon moves through its phases: steady, predictable, always coming back around to full.</p>
-        <p>The company runs two tracks: contract software development for clients, and an in-house product built to solve a real problem: job searching that actually respects your time.</p>
+        <p>The studio runs two tracks: contract software development for clients, and independent products of its own.</p>
       </div>
       <div class="stat-card">
         <dl>
@@ -528,12 +69,8 @@
             <dd>.NET / C#, Azure, DevOps &amp; CI/CD</dd>
           </div>
           <div>
-            <dt>Structure</dt>
-            <dd>Single-founder LLC</dd>
-          </div>
-          <div>
-            <dt>Approach</dt>
-            <dd>Direct client contact, no middle management</dd>
+            <dt>Tracks</dt>
+            <dd>Client services &amp; independent products</dd>
           </div>
         </dl>
       </div>
@@ -547,52 +84,56 @@
       <div class="phase-icon phase-half"></div>
       <span class="phase-label">02 — Services</span>
     </div>
-    <h2 class="section-title">Two ways to work together.</h2>
-    <p class="section-intro">Custom development for teams that need software built right, and a product built for anyone tired of the job board grind.</p>
+    <h2 class="section-title">Client work, built right.</h2>
+    <p class="section-intro">Contract development for teams that need software done properly, from first design conversation to production.</p>
     <div class="service-grid">
       <div class="service-card">
         <span class="service-num">SVC / 01</span>
         <h3>Custom Software Development</h3>
-        <p>End-to-end development for .NET applications on Azure, from architecture through deployment. Comfortable owning a build alone or slotting into an existing pipeline.</p>
+        <p>End-to-end development for .NET applications on Azure, from architecture through deployment. Comfortable owning a build outright or slotting into an existing team and pipeline.</p>
         <div class="tag-row">
           <span class="tag">C# / .NET</span>
           <span class="tag">Azure</span>
-          <span class="tag">CI/CD</span>
-          <span class="tag">DevOps</span>
         </div>
       </div>
       <div class="service-card">
         <span class="service-num">SVC / 02</span>
-        <h3>Job Search App</h3>
-        <p>An independent product that pulls listings from legitimate public job feeds and APIs, then scores and organizes them so job seekers spend less time hunting and more time applying.</p>
+        <h3>DevOps &amp; Cloud Delivery</h3>
+        <p>CI/CD pipelines, deployment automation, and cloud infrastructure on Azure. The plumbing underneath software that nobody thinks about until the moment it breaks, built so it doesn't.</p>
         <div class="tag-row">
-          <span class="tag">In development</span>
-          <span class="tag">Job seekers</span>
+          <span class="tag">CI/CD</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">Azure</span>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="founder">
+<section id="products">
   <div class="wrap">
     <div class="phase-marker">
       <div class="phase-icon phase-gibbous"></div>
-      <span class="phase-label">03 — Founder</span>
+      <span class="phase-label">03 — Products</span>
     </div>
-    <h2 class="section-title">Behind the company.</h2>
-    <div class="founder-wrap">
-      <div class="founder-orb" aria-hidden="true"></div>
-      <div class="founder-copy">
-        <h3>Jasmine</h3>
-        <div class="founder-role">Founder &amp; Software Developer</div>
-        <p>I'm the sole developer behind Tsukino Software Solutions. My background is in .NET and C#, with hands-on experience across Azure, DevOps, and CI/CD pipelines. It's the kind of work that sits underneath software most people never think about, but notice the moment it breaks.</p>
-        <p>I started this company to do that work on my own terms: fewer layers between me and the people I'm building for, and the freedom to build my own product on the side.</p>
-        <div class="skill-list">
-          <span class="skill-pill">.NET / C#</span>
-          <span class="skill-pill">Azure</span>
-          <span class="skill-pill">DevOps</span>
-          <span class="skill-pill">CI/CD</span>
+    <h2 class="section-title">Independent products.</h2>
+    <p class="section-intro">Software the studio builds and runs itself. The lineup grows as ideas earn their place.</p>
+    <div class="service-grid">
+      <div class="service-card">
+        <span class="service-num">PRD / 01</span>
+        <h3>Job Search Platform</h3>
+        <p>Pulls listings from legitimate public job feeds and APIs, then scores and organizes them so job seekers spend less time hunting and more time applying.</p>
+        <div class="tag-row">
+          <span class="tag">In development</span>
+          <span class="tag">Launching 2026</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <span class="service-num">PRD / 02</span>
+        <h3>More in the Workshop</h3>
+        <p>The product side of the studio doesn't stop at one idea. Games and tools are on the roadmap, and they'll appear here when they're ready to be seen.</p>
+        <div class="tag-row">
+          <span class="tag">On the roadmap</span>
         </div>
       </div>
     </div>
@@ -607,7 +148,7 @@
     </div>
     <div class="contact-box">
       <h2>Have a project in mind?</h2>
-      <p>Whether it's a custom build, a question about the job search app, or just to say hello, reach out.</p>
+      <p>Whether it's a custom build, a question about one of the products, or just to say hello, reach out.</p>
       <a href="mailto:hello@tsukinosoftware.com" class="btn btn-primary">hello@tsukinosoftware.com</a>
     </div>
   </div>
@@ -619,96 +160,7 @@
   </div>
 </footer>
 
-<script>
-  // Signature element: a slow-drifting starfield with a single moon that
-  // waxes and wanes in sync with scroll position, echoing the phase
-  // markers used to divide each section.
-  const canvas = document.getElementById('moon-canvas');
-  const ctx = canvas.getContext('2d');
-  let w, h, stars = [];
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  function resize() {
-    w = canvas.width = canvas.offsetWidth;
-    h = canvas.height = canvas.offsetHeight;
-  }
-  window.addEventListener('resize', resize);
-  resize();
-
-  function makeStars(n) {
-    stars = [];
-    for (let i = 0; i < n; i++) {
-      stars.push({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 1.3 + 0.2,
-        tw: Math.random() * Math.PI * 2,
-        speed: Math.random() * 0.012 + 0.004
-      });
-    }
-  }
-  makeStars(140);
-
-  const moon = { cx: () => w * 0.78, cy: () => h * 0.38, r: 90 };
-
-  function draw(t) {
-    ctx.clearRect(0, 0, w, h);
-
-    // stars
-    ctx.fillStyle = '#F2F0EA';
-    stars.forEach(s => {
-      const alpha = 0.25 + 0.55 * Math.abs(Math.sin(s.tw + t * s.speed));
-      ctx.globalAlpha = alpha;
-      ctx.beginPath();
-      ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    ctx.globalAlpha = 1;
-
-    // moon glow
-    const cx = moon.cx(), cy = moon.cy(), r = moon.r;
-    const glow = ctx.createRadialGradient(cx, cy, r * 0.6, cx, cy, r * 3.2);
-    glow.addColorStop(0, 'rgba(232, 223, 200, 0.14)');
-    glow.addColorStop(1, 'rgba(232, 223, 200, 0)');
-    ctx.fillStyle = glow;
-    ctx.beginPath();
-    ctx.arc(cx, cy, r * 3.2, 0, Math.PI * 2);
-    ctx.fill();
-
-    // moon body
-    ctx.save();
-    ctx.beginPath();
-    ctx.arc(cx, cy, r, 0, Math.PI * 2);
-    ctx.clip();
-    ctx.fillStyle = '#E8DFC8';
-    ctx.fillRect(cx - r, cy - r, r * 2, r * 2);
-
-    // waxing/waning shadow, phase driven by slow time cycle
-    const phase = (Math.sin(t * 0.00025) + 1) / 2; // 0..1
-    const shadowX = cx - r + phase * r * 2;
-    ctx.fillStyle = '#0F1420';
-    ctx.beginPath();
-    ctx.ellipse(shadowX, cy, r * 0.92, r, 0, 0, Math.PI * 2);
-    ctx.fill();
-
-    // craters
-    ctx.fillStyle = 'rgba(15, 20, 32, 0.18)';
-    [[-0.25, -0.2, 0.16], [0.15, 0.1, 0.11], [-0.05, 0.3, 0.08]].forEach(([dx, dy, dr]) => {
-      ctx.beginPath();
-      ctx.arc(cx + dx * r, cy + dy * r, dr * r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-    ctx.restore();
-
-    if (!reduceMotion) requestAnimationFrame(draw);
-  }
-
-  if (reduceMotion) {
-    draw(4000); // static frame, near-full moon
-  } else {
-    requestAnimationFrame(draw);
-  }
-</script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>
