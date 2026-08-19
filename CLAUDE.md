@@ -60,7 +60,7 @@ product line, never as "the company behind one app."
 
 ## Content notes / things to fix before shipping
 
-- **Email is a placeholder**: `hello@tsukinosoftware.com` — replace with the real business email once set up.
+- **Email**: the site shows `contact@tsukinosoftware.com` (public alias). Decided 2026-08-19: `contact@` is the public/site address, `jasmine@` is the business-identity address used for service accounts; both are Porkbun forwards into the same inbox. Don't put `jasmine@` on the site.
 - **No real domain/hosting yet** — needs to be pointed somewhere once purchased.
 - **Founder bio is minimal** — currently just role + background stack (.NET/C#, Azure, DevOps, CI/CD). Could be expanded with more personality, specific projects, or a headshot if wanted.
 - **Job Search App service card is intentionally vague** ("In development") since that product isn't public yet — update copy once it's ready to link to or demo.
